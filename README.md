@@ -21,10 +21,10 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 
 ### Goals
 
-- _Full auth
-- _Full CRUD
-- _Association between users and listings
-- _Highly styled
+- _Full auth_
+- _Full CRUD_
+- _Association between users and listings_
+- _Highly styled_
 
 
 <br>
