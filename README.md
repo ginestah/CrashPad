@@ -12,10 +12,10 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 
 ## MVP
 
-> User swill have the ability to make an account, and add their home as a CrashPad for others to crash at. Users can search for a crashpad by location,and contact the host to negotiate nights they will be staying. 
+> Users will have the ability to make an account, and add their home as a CrashPad for others to crash at. Users can search for a crashpad by location,and contact the host to negotiate nights they will be staying. 
 
 
- vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+
 
 <br>
 
@@ -35,11 +35,10 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _The core structure of the front end._ |
+|   React Router   | _Allow routing to different screens/pages._ |
+| Styled Components | _A good way to style your component within the JSX file._ |
+|     Ruby on Rails      | _Backend for RESTful API._ |
 
 <br>
 
