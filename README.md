@@ -45,7 +45,7 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 ### Client (Front End)
 
 #### Wireframes
-[Mobile Wireframe](https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/)
+[WireFrame](https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/)
 #### Component Tree
 
 
@@ -114,14 +114,14 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+Link this with my p2, so that people can find places to stay near a climb they were looking at on spotter. <br>
+Add more to reviews. <br>
+Add a virtual currency exchange and legitimize booking on the site. <br>
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
