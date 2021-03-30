@@ -49,7 +49,7 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 #### Component Tree
 
 
-[Component Tree](https://whimsical.com/crashpad-4KjEBUaL2Mm4vWMpsbdxAt@2Ux7TurymMTo5ags9cRR)
+![Component Tree](Assets/Heirarchy.png)
 
 #### Component Architecture
 
