@@ -46,31 +46,7 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+!(link to wireframe)[https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/]
 
 #### Component Tree
 
