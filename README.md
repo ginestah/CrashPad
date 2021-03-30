@@ -45,9 +45,7 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 ### Client (Front End)
 
 #### Wireframes
-
-!(link to wireframe)[https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/]
-
+[Mobile Wireframe](https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/)
 #### Component Tree
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
