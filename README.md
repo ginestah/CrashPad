@@ -48,9 +48,8 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 [Mobile Wireframe](https://xd.adobe.com/view/aa682a88-9608-4af4-892b-28bd402a0080-ff3b/)
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-[Component Tree](https://whimsical.com/crashpad-4KjEBUaL2Mm4vWMpsbdxAt)
+[Component Tree](https://whimsical.com/crashpad-4KjEBUaL2Mm4vWMpsbdxAt@2Ux7TurymMTo5ags9cRR)
 
 #### Component Architecture
 
@@ -59,14 +58,22 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 ``` structure
 
 src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+|__ screens/
+      |__ Landing
+      |__ All/Search
+      |__ Reviews/Details
+      |__ AddReview(modal maybe)
+      |__ 
 |__ components/
       |__ Header.jsx
+      |__ Footer.jsx
+      |__ Layout.jsx
+      |__ Pad.jsx
 |__ services/
+      |__ api-config.js
+      |__ auth.js
+      |__ pads.js
+      |__ ratings.js?
 
 ```
 
@@ -76,11 +83,22 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+| Setting Up Basic Layout | H | 2 Hr |  Hr |
+| Creating API | H | 3 Hr | 3 Hr |  Hr |
+| Testing API | H | 2 Hr |  Hr |
+| Deploy API | H | 3 Hr |  Hr | 
+| React Route/Links | H | 3 Hr |  Hr | 
+| React Post/Feed Component | H | 3 Hr |  Hr | 
+| React/JS post/put/delete calls | H | 3 Hr |  Hr | 
+| React Header/Footer | M | 3 Hr |  Hr | 
+| Pads | M | 3 Hr |  Hr | 
+| CSS Styling MOBILE | H | 3 Hr |  Hr | 
+| CSS Styling DESKTOP/Tablet | H | 3 Hr |  Hr | 
+| POST MVP - Likes | L | 3 Hr | Hr | 
+| CSS breakpoints | M | 3 Hr |  Hr | 
+| Testing React Components | H | 3 Hr |  Hr | 
+| Hosting MVP | M | 3 Hr |  Hr | 
+| Total Time | | 55 Hrs | Hrs | 
 
 <br>
 
@@ -88,7 +106,6 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
 [ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
