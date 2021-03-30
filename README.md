@@ -84,7 +84,7 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Setting Up Basic Layout | H | 2 Hr |  Hr |
-| Creating API | H | 3 Hr | 3 Hr |  Hr |
+| Creating API | H | 3 Hr | Hr |  Hr |
 | Testing API | H | 2 Hr |  Hr |
 | Deploy API | H | 3 Hr |  Hr | 
 | React Route/Links | H | 3 Hr |  Hr | 
