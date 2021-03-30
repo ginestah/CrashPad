@@ -5,7 +5,7 @@
 
 ## Overview
 
-_**CrashPad** is a community house sharing experience for climbers, and outdoorsy people. The goal is to create a space where you can find a place to crash around the country when visiting crags outside of your local area. Users will have the ability to make an account, and add their home as a CrashPad for others to crash at. Users can search for a crashpad by location, pricing/payment is through virtual currency that is obtained by listing their house as a crashpad, or by purchasing from the site This will prevent price gouging of particular crashpads, and create a trade based isolated economy._
+_**CrashPad** is a community house sharing experience for climbers, and outdoorsy people. The goal is to create a space where you can find a place to crash around the country when visiting crags outside of your local area. Users will have the ability to make an account, and add their home as a CrashPad for others to crash at. Users can search for a crashpad by location, and contact the host to negotiate a time to stay and for how long, pricing can be negotiated, or trade for cooking/cleaning or work._
 
 
 <br>
