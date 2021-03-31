@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_31_144417) do
+ActiveRecord::Schema.define(version: 2021_03_31_192532) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "pads", force: :cascade do |t|
+    t.string "name"
+    t.integer "rooms"
+    t.date "available_dates"
+    t.boolean "private_kitchen"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "private_bathroom"
+    t.string "location"
+    t.index ["user_id"], name: "index_pads_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "pad_id", null: false
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pad_id"], name: "index_photos_on_pad_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "pad_id", null: false
+    t.string "content"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pad_id"], name: "index_reviews_on_pad_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -22,4 +56,8 @@ ActiveRecord::Schema.define(version: 2021_03_31_144417) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "pads", "users"
+  add_foreign_key "photos", "pads"
+  add_foreign_key "reviews", "pads"
+  add_foreign_key "reviews", "users"
 end
