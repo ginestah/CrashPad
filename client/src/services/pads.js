@@ -16,7 +16,7 @@ export const postPad = async (padData) => {
 };
 
 export const putPad = async (id, padData) => {
-  const resp = await api.put(`/pad/${id}`, { pad: padData });
+  const resp = await api.put(`/pads/${id}`, { pad: padData });
   return resp.data;
 };
 

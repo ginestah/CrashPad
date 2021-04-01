@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render :json => {:user=> @users.as_json(:except=>[:password_digest])}
   end
 
   # GET /users/1

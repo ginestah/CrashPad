@@ -43,13 +43,13 @@ function App() {
     <div className="App">
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route exact path="/register">
+          <Route path="/register">
             <Register handleRegister={handleRegister} />
           </Route>
-          <Route exact path="/">
+          <Route path="/">
             <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>

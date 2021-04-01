@@ -6,7 +6,9 @@ export default function Footer(props) {
       <footer>
         {currentUser ? (
           <>
-            <button onClick={props.handleLogout}>Logout</button>
+            <Link onClick={props.handleLogout} to="/">
+              Logout
+            </Link>
           </>
         ) : (
           <Link to="/login">Login</Link>
@@ -15,7 +17,7 @@ export default function Footer(props) {
       <br />
       {currentUser && (
         <>
-          <Link to="Host"></Link>
+          <Link to="/new">Host</Link>
         </>
       )}
     </>

@@ -8,6 +8,7 @@ export default function Header(props) {
         <Link to="/">
           <h1>CrashPad</h1>
         </Link>
+        <Link to="/pads">Pads</Link>
       </header>
       <br />
     </>

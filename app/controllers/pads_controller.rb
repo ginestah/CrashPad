@@ -5,7 +5,6 @@ class PadsController < ApplicationController
   # GET /pads
   def index
     @pads = Pad.all
-
     render json: @pads, include: [:user, :reviews, :photos]
   end
 
