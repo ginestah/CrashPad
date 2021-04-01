@@ -1,6 +1,6 @@
 class PadsController < ApplicationController
   before_action :authorize_request, only: [:create, :update, :destroy]
-  before_action :set_pad, only: [:show, :update, :destroy]
+  before_action :set_pad, only: [ :update, :destroy]
 
   # GET /pads
   def index
@@ -10,7 +10,8 @@ class PadsController < ApplicationController
 
   # GET /pads/1
   def show
-    render json: @pad
+    @pad = Pad.find(params[:id])
+    render json: @pad,include: [ :user, :reviews, :photos] 
   end
 
   # POST /pads
