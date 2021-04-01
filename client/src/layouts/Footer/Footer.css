@@ -1,0 +1,27 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: solid 1px black;
+  /* background-color: white; */
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-size: 2vh;
+}
+footer a {
+  display: block;
+  text-align: right;
+}
+a:visted {
+  color: black;
+}
+.login-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+  right: 5px;
+}

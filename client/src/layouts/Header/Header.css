@@ -1,0 +1,35 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  border-bottom: solid 1px black;
+  background-color: black;
+}
+
+.logo {
+  display: block;
+  text-align: left;
+  left: 10px;
+  color: salmon;
+  letter-spacing: 1.1;
+}
+header a {
+  font-size: max(1vw, 12px);
+  text-decoration: none;
+  color: white;
+}
+header a:hover {
+  color: darksalmon;
+}
+header a:active {
+  text-decoration: none;
+}
+
+.search {
+  border-radius: 15px;
+  height: 30px;
+  max-width: 400px;
+}

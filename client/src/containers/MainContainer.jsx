@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { destroyPad, getAllPads, postPad, putPad } from "../services/pads";
 
-import Pads from "../screens/Pads";
+import Pads from "../screens/Pads/Pads";
 import AddPad from "../screens/AddPad";
 import EditPad from "../screens/EditPad";
 
 function MainContainer(props) {
   const [pads, setPads] = useState([]);
+  const [toggle, setToggle] = useState(false);
   const history = useHistory();
   const { currentUser } = props;
 
@@ -18,12 +19,14 @@ function MainContainer(props) {
       setPads(data);
     };
     fetchPads();
-  }, [pads]);
+  }, [toggle]);
 
   //api call to post a new pad
   const handleCreate = async (padData) => {
     const newPad = await postPad(padData);
     setPads((prevState) => [...prevState, newPad]);
+    setToggle(!toggle);
+
     history.push("/");
   };
 
@@ -32,9 +35,12 @@ function MainContainer(props) {
     const updatedPad = await putPad(id, padData);
     setPads((prevState) =>
       prevState.map((pad) => {
-        return pad.id == id ? updatedPad : pad;
+        return pad.id === Number(id) ? updatedPad : pad;
       })
     );
+    setToggle(!toggle);
+
+    history.push("/");
   };
 
   //delete a pad

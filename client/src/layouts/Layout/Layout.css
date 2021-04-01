@@ -1,0 +1,13 @@
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 110vw;
+}
+.layout-children {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

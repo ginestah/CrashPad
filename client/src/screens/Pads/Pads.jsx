@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Layout from "../layouts/Layout/Layout";
+import Layout from "../../layouts/Layout/Layout";
 
 export default function Pads(props) {
   const truthyKitchen = (pad) => {

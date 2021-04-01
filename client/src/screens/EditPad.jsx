@@ -29,11 +29,13 @@ export default function EditPad(props) {
     const prefill = () => {
       const padData = pads.find((pad) => pad.id === Number(id));
       setFormData({
+        private_bathroom: false,
+        private_kitchen: false,
         name: padData.name,
         rooms: padData.rooms,
         available_dates: padData.available_dates,
         location: padData.location,
-        photos_attributes: [padData.photos_attributes],
+        photos_attributes: padData.photos,
       });
     };
     if (pads.length) {
@@ -72,16 +74,13 @@ export default function EditPad(props) {
       private_bathroom: e.target.checked,
     }));
   }
+
   //displays the photos you have added so far
-  const imageJSX = formData.photos_attributes.map((photo, index) => (
+  const imageJSX = formData.photos_attributes?.map((photo, index) => (
     <div className="photo-container" key={index}>
       {photo ? (
         <>
-          <img
-            className="preview-image"
-            src={photo.url}
-            alt={`product ${index}`}
-          />
+          <img className="preview-image" src={photo.url} alt={`pad ${index}`} />
           <button value={index} onClick={deleteImage} type="button">
             Delete
           </button>

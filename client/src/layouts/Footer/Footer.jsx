@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+import "./Footer.css";
 export default function Footer(props) {
   const { currentUser } = props;
   return (
@@ -6,18 +8,22 @@ export default function Footer(props) {
       <footer>
         {currentUser ? (
           <>
-            <Link onClick={props.handleLogout} to="/">
+            <Link className="login-link" onClick={props.handleLogout} to="/">
               Logout
             </Link>
           </>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link className="login-link" to="/login">
+            Login
+          </Link>
         )}
       </footer>
       <br />
       {currentUser && (
         <>
-          <Link to="/new">Host</Link>
+          <Link className="host-link" to="/new">
+            Host
+          </Link>
         </>
       )}
     </>

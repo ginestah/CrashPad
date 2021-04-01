@@ -48,6 +48,6 @@ class PadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pad_params
-      params.require(:pad).permit(:name, :rooms, :available_dates, :photos_id, :private_kitchen, :private_bathroom,:location, :user_id,photos_attributes: [:url,:_destroy])
+      params.require(:pad).permit(:name, :rooms, :available_dates, :photos_id, :private_kitchen, :private_bathroom,:location, :user_id,photos_attributes: [:url,:id,:_destroy])
     end
 end
