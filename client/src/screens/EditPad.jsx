@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { destroyPhoto } from "../services/pads";
 
+import "./AddPad/AddPad.css";
+
 export default function EditPad(props) {
   const { pads, handleUpdate } = props;
   const { id } = useParams();
@@ -133,85 +135,90 @@ export default function EditPad(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleUpdate(id, formData);
-      }}
-    >
-      <h3>Edit your pad</h3>
-      <label>
-        Name of Posting:
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Location:
-        <input
-          type="text"
-          name="location"
-          value={location}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Beds:
-        <input
-          type="number"
-          name="rooms"
-          value={rooms}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Private Kitchen?
+    <div className="form-container">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleUpdate(id, formData);
+        }}
+      >
+        <h3>Edit your pad</h3>
         <label>
-          Yes
+          Name of Posting:
           <input
-            type="checkbox"
-            value={true}
-            name="private_kitchen"
-            onChange={(e) => handleKitchen(e)}
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
           ></input>
         </label>
-      </label>
-      <label>
-        Private Bathroom?
         <label>
-          Yes
+          Location:
           <input
-            type="checkbox"
-            value={true}
-            name="private_bathroom"
-            onChange={(e) => handleBathroom(e)}
+            type="text"
+            name="location"
+            value={location}
+            onChange={handleChange}
           ></input>
         </label>
-      </label>
-      <label>
-        Available Date:
-        <input
-          type="date"
-          value={available_dates}
-          name="available_dates"
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Photos
-        <input
-          value={imageAdd}
-          type="text"
-          name="photo_attributes"
-          onChange={(e) => setImageAdd(e.target.value)}
-        ></input>
-        {checkImage()}
-      </label>
+        <label>
+          Beds:
+          <input
+            type="number"
+            name="rooms"
+            value={rooms}
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Private Kitchen?
+          <label>
+            Yes
+            <input
+              type="checkbox"
+              value={true}
+              name="private_kitchen"
+              onChange={(e) => handleKitchen(e)}
+            ></input>
+          </label>
+        </label>
+        <label>
+          Private Bathroom?
+          <label>
+            Yes
+            <input
+              type="checkbox"
+              value={true}
+              name="private_bathroom"
+              onChange={(e) => handleBathroom(e)}
+            ></input>
+          </label>
+        </label>
+        <label>
+          Available Date:
+          <input
+            type="date"
+            value={available_dates}
+            name="available_dates"
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Photos
+          <input
+            value={imageAdd}
+            type="text"
+            name="photo_attributes"
+            onChange={(e) => setImageAdd(e.target.value)}
+          ></input>
+          {checkImage()}
+        </label>
+        <button className="submit-pad" type="submit">
+          Edit Pad
+        </button>
+      </form>
+      <p>Current photos:</p>
       {imageJSX}
-      <button type="submit">Edit Pad</button>
-    </form>
+    </div>
   );
 }

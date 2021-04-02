@@ -7,8 +7,16 @@ export default function Register(props) {
     password: "",
     first_name: "",
     last_name: "",
+    password_confirm: "",
   });
-  const { username, email, password, first_name, last_name } = formData;
+  const {
+    password_confirm,
+    username,
+    email,
+    password,
+    first_name,
+    last_name,
+  } = formData;
   const { handleRegister } = props;
 
   const handleChange = (e) => {
@@ -69,8 +77,17 @@ export default function Register(props) {
           onChange={handleChange}
         />
       </label>
+      <label>
+        Confirm Password:
+        <input
+          type="password"
+          name="password_confirm"
+          value={password_confirm}
+          onChange={handleChange}
+        />
+      </label>
       <br />
-      <button>Submit</button>
+      <button className="submit-pad">Submit</button>
     </form>
   );
 }

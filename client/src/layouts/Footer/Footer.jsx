@@ -17,6 +17,12 @@ export default function Footer(props) {
             Login
           </Link>
         )}
+        <a
+          className="login-link"
+          href="https://www.linkedin.com/in/huckleberry-ginesta/"
+        >
+          &copy; Huckleberry Ginesta 2021
+        </a>
         <br />
         {currentUser && (
           <>

@@ -3,7 +3,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Layout from "./layouts/Layout/Layout";
 import Register from "./screens/Register";
-import Login from "./screens/Login";
+import Login from "./screens/Login/Login";
 import MainContainer from "./containers/MainContainer";
 
 import {

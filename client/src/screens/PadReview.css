@@ -1,0 +1,38 @@
+.review-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.review {
+  border: 2px solid grey;
+  /* max-width: 180px; */
+  border-radius: 25px;
+  align-self: flex-start;
+  width: 80vw;
+}
+.review-content {
+  padding: 5px;
+}
+.review-photos {
+  max-width: 80vw;
+  height: auto;
+}
+.pad-title {
+  max-width: fit-content;
+}
+.review-container-two {
+  display: grid;
+}
+
+.add-review {
+  color: salmon;
+  text-decoration: none;
+}
+.add-review:visited {
+  color: salmon;
+}
+
+.add-review:hover {
+  box-shadow: rgba(233, 233, 233, 0);
+}

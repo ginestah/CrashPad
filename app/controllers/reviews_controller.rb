@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-before_action :set_review, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: %i[index show]
+before_action :set_review, only: [:show, :update]
+before_action :authorize_request, except: %i[index show]
 def index 
   @pad = Pad.find(params[:pad_id])
   @reviews = @pad.reviews 
@@ -27,6 +27,7 @@ end
  end
 
 def destroy 
+  @review = Review.find(params[:id])
   @review.destroy
 end
 
@@ -34,7 +35,7 @@ def set_review
   @review = Review.find(params[:id])
 end
 def review_params
-    params.require(:review).permit(:user_id,:pad_id,:content)
+    params.require(:review).permit(:user_id, :pad_id, :content)
 
   end
  

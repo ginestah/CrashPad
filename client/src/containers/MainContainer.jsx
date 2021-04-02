@@ -3,9 +3,11 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import { destroyPad, getAllPads, postPad, putPad } from "../services/pads";
 
 import Pads from "../screens/Pads/Pads";
-import AddPad from "../screens/AddPad";
+import AddPad from "../screens/AddPad/AddPad";
 import EditPad from "../screens/EditPad";
-import Home from "../screens/Home";
+import Home from "../screens/Home/Home";
+import PadReview from "../screens/PadReview";
+import AddReview from "../screens/AddReview";
 
 function MainContainer(props) {
   const [pads, setPads] = useState([]);
@@ -27,7 +29,6 @@ function MainContainer(props) {
     const newPad = await postPad(padData);
     setPads((prevState) => [...prevState, newPad]);
     setToggle(!toggle);
-
     history.push("/");
   };
 
@@ -40,7 +41,6 @@ function MainContainer(props) {
       })
     );
     setToggle(!toggle);
-
     history.push("/");
   };
 
@@ -52,8 +52,14 @@ function MainContainer(props) {
 
   return (
     <Switch>
+      <Route path="/pads/reviews/add/:id">
+        <AddReview currentUser={currentUser} />
+      </Route>
       <Route path="/pads/:id/edit">
         <EditPad pads={pads} handleUpdate={handleUpdate} />
+      </Route>
+      <Route path="/pads/:id">
+        <PadReview currentUser={currentUser} />
       </Route>
       <Route path="/pads">
         <Pads

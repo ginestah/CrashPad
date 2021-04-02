@@ -6,7 +6,7 @@ header {
   z-index: 1;
   background-color: white;
   border-bottom: solid 1px black;
-  background-color: black;
+  background-color: rgb(26, 26, 26);
 }
 
 .logo {

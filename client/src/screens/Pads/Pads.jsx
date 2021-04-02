@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import Layout from "../../layouts/Layout/Layout";
+
+import "./Pads.css";
 
 export default function Pads(props) {
   const truthyKitchen = (pad) => {
@@ -19,33 +19,37 @@ export default function Pads(props) {
     }
   };
   return (
-    <div>
+    <div className="all-pads">
       <h1>Pads:</h1>
       {pads.map((pad) => (
-        <>
-          <Link key={pad.id} to={`/pads/${pad.id}`}>
-            <div className="pad-container">
-              <p>{pad.name}</p>
-              <img src={pad.photos[0]?.url} />
-              <p>Beds: {pad.rooms}</p>
-              <p>Private Kitchen: {truthyKitchen(pad)}</p>
-              <p>Private Bathroom: {truthyBathroom(pad)}</p>
-              <p>Available: {pad.available_dates}</p>
-            </div>
+        <div className="pad-container" key={pad.id}>
+          <h2>{pad.name}</h2>
+          <img alt="house" src={pad.photos[0]?.url} />
+          <p>Beds: {pad.rooms}</p>
+          <p>Private Kitchen: {truthyKitchen(pad)}</p>
+          <p>Private Bathroom: {truthyBathroom(pad)}</p>
+          <p>Available: {pad.available_dates}</p>
+          <Link to={`/pads/${pad.id}`}>
+            <button className="reviews-button">Reviews</button>
           </Link>
           {currentUser && currentUser.id === pad.user.id ? (
             <>
               <Link to={`/pads/${pad.id}/edit`}>
-                <button>Edit</button>
+                <button className="edit-button">Edit</button>
               </Link>
-              <button onClick={() => handleDelete(pad.id)}>Delete</button>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(pad.id)}
+              >
+                Delete
+              </button>
             </>
           ) : (
             <a href={`mailto: ${pad.user.email}`}>
-              <button>Book</button>
+              <button className="book-button">Book</button>
             </a>
           )}
-        </>
+        </div>
       ))}
     </div>
   );

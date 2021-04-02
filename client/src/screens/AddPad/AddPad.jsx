@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./AddPad.css";
+
 export default function AddPad(props) {
   const { handleCreate } = props;
   const [imageAdd, setImageAdd] = useState([]);
@@ -97,85 +99,93 @@ export default function AddPad(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleCreate(formData);
-      }}
-    >
-      <h3>Add your pad</h3>
-      <label>
-        Name of Posting:
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Location:
-        <input
-          type="text"
-          name="location"
-          value={location}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Beds:
-        <input
-          type="number"
-          name="rooms"
-          value={rooms}
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Private Kitchen?
+    <div className="form-container">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleCreate(formData);
+        }}
+      >
+        <h3>Add your pad</h3>
         <label>
-          Yes
+          Name of Posting:
           <input
-            type="checkbox"
-            value={true}
-            name="private_kitchen"
-            onChange={(e) => handleKitchen(e)}
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
           ></input>
         </label>
-      </label>
-      <label>
-        Private Bathroom?
         <label>
-          Yes
+          Location:
           <input
-            type="checkbox"
-            value={true}
-            name="private_bathroom"
-            onChange={(e) => handleBathroom(e)}
+            type="text"
+            name="location"
+            value={location}
+            onChange={handleChange}
           ></input>
         </label>
-      </label>
-      <label>
-        Available Date:
-        <input
-          type="date"
-          value={available_dates}
-          name="available_dates"
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Photos
-        <input
-          value={imageAdd}
-          type="text"
-          name="photo_attributes"
-          onChange={(e) => setImageAdd(e.target.value)}
-        ></input>
-        {checkImage()}
-      </label>
+        <br />
+        <label>
+          Beds:
+          <input
+            type="number"
+            name="rooms"
+            value={rooms}
+            onChange={handleChange}
+          ></input>
+        </label>
+        <br />
+        <label>
+          Private Kitchen?
+          <label>
+            <input
+              type="checkbox"
+              value={true}
+              name="private_kitchen"
+              onChange={(e) => handleKitchen(e)}
+            ></input>
+          </label>
+        </label>
+        <br />
+        <label>
+          Private Bathroom?
+          <label>
+            <input
+              type="checkbox"
+              value={true}
+              name="private_bathroom"
+              onChange={(e) => handleBathroom(e)}
+            ></input>
+          </label>
+        </label>
+        <br />
+        <label>
+          Available Date:
+          <input
+            type="date"
+            value={available_dates}
+            name="available_dates"
+            onChange={handleChange}
+          ></input>
+        </label>
+        <br />
+        <label>
+          Photos
+          <input
+            value={imageAdd}
+            type="text"
+            name="photo_attributes"
+            onChange={(e) => setImageAdd(e.target.value)}
+          ></input>
+          {checkImage()}
+          <br />
+        </label>
+        <button className="submit-pad" type="submit">
+          Post Pad
+        </button>
+      </form>
       {imageJSX}
-      <button type="submit">Post Pad</button>
-    </form>
+    </div>
   );
 }

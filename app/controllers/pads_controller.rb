@@ -11,7 +11,7 @@ class PadsController < ApplicationController
   # GET /pads/1
   def show
     @pad = Pad.find(params[:id])
-    render json: @pad,include: [ :user, :reviews, :photos] 
+    render json: @pad,include: [ :user, {reviews:{include: :user}}, :photos] 
   end
 
   # POST /pads
