@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+.home-image {
+  max-width: 70vw;
+  align-self: center;
+  height: auto;
+}
+.image-container {
+  background-color: black;
+  width: 120vw;
+  margin-top: -35px;
+  height: 35vh;
+  color: white;
+}
+.main-content {
+  text-align: left;
+  font-size: 25px;
+  margin: 20px;
+}
