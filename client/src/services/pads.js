@@ -24,3 +24,7 @@ export const destroyPad = async (id) => {
   const resp = await api.delete(`/pads/${id}`);
   return resp;
 };
+
+export const destroyPhoto = async (id) => {
+  const resp = await api.delete(`/photos/${id}`);
+};

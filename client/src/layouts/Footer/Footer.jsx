@@ -17,15 +17,15 @@ export default function Footer(props) {
             Login
           </Link>
         )}
+        <br />
+        {currentUser && (
+          <>
+            <Link className="login-link" to="/new">
+              Host
+            </Link>
+          </>
+        )}
       </footer>
-      <br />
-      {currentUser && (
-        <>
-          <Link className="host-link" to="/new">
-            Host
-          </Link>
-        </>
-      )}
     </>
   );
 }

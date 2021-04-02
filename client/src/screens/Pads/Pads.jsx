@@ -23,7 +23,7 @@ export default function Pads(props) {
       <h1>Pads:</h1>
       {pads.map((pad) => (
         <>
-          <Link to={`/pads/${pad.id}`}>
+          <Link key={pad.id} to={`/pads/${pad.id}`}>
             <div className="pad-container">
               <p>{pad.name}</p>
               <img src={pad.photos[0]?.url} />

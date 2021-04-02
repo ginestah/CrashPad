@@ -34,7 +34,10 @@ class PadsController < ApplicationController
       render json: @pad.errors, status: :unprocessable_entity
     end
   end
-
+def delete_photo
+  @photo = Photo.find(params[:id])
+  @photo.destroy
+end
   # DELETE /pads/1
   def destroy
     @pad.destroy

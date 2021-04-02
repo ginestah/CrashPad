@@ -5,6 +5,7 @@ import { destroyPad, getAllPads, postPad, putPad } from "../services/pads";
 import Pads from "../screens/Pads/Pads";
 import AddPad from "../screens/AddPad";
 import EditPad from "../screens/EditPad";
+import Home from "../screens/Home";
 
 function MainContainer(props) {
   const [pads, setPads] = useState([]);
@@ -63,6 +64,9 @@ function MainContainer(props) {
       </Route>
       <Route path="/new">
         <AddPad handleCreate={handleCreate} currentUser={currentUser} />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   );

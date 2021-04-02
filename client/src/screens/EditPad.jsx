@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { destroyPhoto } from "../services/pads";
 
 export default function EditPad(props) {
   const { pads, handleUpdate } = props;
@@ -49,6 +50,9 @@ export default function EditPad(props) {
       [name]: value,
     }));
   }
+  const handlePhotoDelete = async (id) => {
+    await destroyPhoto(id);
+  };
 
   function handleImage(e) {
     setFormData((prevState) => ({
@@ -57,9 +61,16 @@ export default function EditPad(props) {
     }));
     setImageAdd("");
   }
+
   const deleteImage = (e) => {
-    formData.photos_attributes.splice(e.target.value, 1);
-    setFormData({ ...formData });
+    if (formData.photos_attributes[e.target.value].id) {
+      handlePhotoDelete(formData.photos_attributes[e.target.value].id);
+      formData.photos_attributes.splice(e.target.value, 1);
+      setFormData({ ...formData });
+    } else {
+      formData.photos_attributes.splice(e.target.value, 1);
+      setFormData({ ...formData });
+    }
   };
 
   function handleKitchen(e) {
