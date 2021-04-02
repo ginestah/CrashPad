@@ -26,6 +26,8 @@ export default function EditPad(props) {
     location,
     photos_attributes,
   } = formData;
+
+  //prefills and sets photos so you can see what you have added so far
   useEffect(() => {
     const prefill = () => {
       const padData = pads.find((pad) => pad.id === Number(id));
@@ -43,6 +45,8 @@ export default function EditPad(props) {
       prefill();
     }
   }, [pads, id]);
+
+  //generic handle change for the form
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -50,10 +54,13 @@ export default function EditPad(props) {
       [name]: value,
     }));
   }
+  //delete request to the photos table
   const handlePhotoDelete = async (id) => {
     await destroyPhoto(id);
   };
 
+  //Adds photos to the photos_attributes key, as a nested object in order for the backend to accept_nested_attributes
+  //then resets the input to an empty string so the user can add another
   function handleImage(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -61,7 +68,8 @@ export default function EditPad(props) {
     }));
     setImageAdd("");
   }
-
+  //checks the image to see if it has an ID, if an id exists its a photo url stored in the database, so we make a delete request
+  //to the photos table, if not the photo was added in state and can be simply spliced out of state
   const deleteImage = (e) => {
     if (formData.photos_attributes[e.target.value].id) {
       handlePhotoDelete(formData.photos_attributes[e.target.value].id);
@@ -72,13 +80,15 @@ export default function EditPad(props) {
       setFormData({ ...formData });
     }
   };
-
+  //adds a true boolean to the form in regards to a private kitchen
   function handleKitchen(e) {
     setFormData((prevState) => ({
       ...prevState,
       private_kitchen: e.target.checked,
     }));
   }
+  //adds a true boolean to the form in regards to a private bathroom
+
   function handleBathroom(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -105,7 +115,7 @@ export default function EditPad(props) {
     /\b(https?:\/\/\S+(?:png|jpe?g|gif|photo)\S*)\b/gim
   );
 
-  //checks against regex and allows you to add if it passes, or not if it doesn't.
+  //checks against regex and allows you to add if it passes.
   const checkImage = () => {
     if (urlCheck.test(imageAdd)) {
       return (
