@@ -9,8 +9,8 @@
 }
 .image-container {
   background-color: black;
-  width: 120vw;
-  margin-top: -35px;
+  width: 100%;
+  margin-top: 10px;
   height: 35vh;
   color: white;
 }
@@ -18,4 +18,13 @@
   text-align: left;
   font-size: 25px;
   margin: 20px;
+}
+@media (min-width: 470px) {
+  .home-image {
+    width: 60vw;
+  }
+  .image-container {
+    height: 60vh;
+    width: 100%;
+  }
 }

@@ -7,6 +7,10 @@ header {
   background-color: white;
   border-bottom: solid 1px black;
   background-color: rgb(26, 26, 26);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
@@ -29,7 +33,9 @@ header a:active {
 }
 
 .search {
+  align-self: center;
   border-radius: 15px;
-  height: 30px;
-  max-width: 400px;
+  height: 40px;
+  width: 100%;
+  max-width: 500px;
 }

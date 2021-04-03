@@ -63,6 +63,7 @@ function MainContainer(props) {
       </Route>
       <Route path="/pads">
         <Pads
+          search={props.search}
           pads={pads}
           currentUser={currentUser}
           handleDelete={handleDelete}
