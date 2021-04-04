@@ -8,7 +8,7 @@ footer {
   height: 5vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: black;
   font-size: 2vh;
 }
@@ -24,4 +24,14 @@ a:visted {
   color: black;
   display: block;
   right: 5px;
+}
+.social {
+  text-decoration: none;
+  color: salmon;
+}
+.social:visited {
+  color: salmon;
+}
+.social:hover {
+  transform: scale(1.2);
 }

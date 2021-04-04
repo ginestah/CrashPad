@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import "./Pads.css";
 
 export default function Pads(props) {
+  const { pads, handleDelete, currentUser } = props;
+  const queriedPads = pads.filter((pad) =>
+    pad.location.toLowerCase().includes(props.search.toLowerCase())
+  );
+
   const truthyKitchen = (pad) => {
     if (pad.private_kitchen === true) {
       return <>Yes</>;
@@ -10,7 +16,6 @@ export default function Pads(props) {
       return <>No</>;
     }
   };
-  const { pads, handleDelete, currentUser } = props;
   const truthyBathroom = (pad) => {
     if (pad.private_bathroom === true) {
       return <>Yes</>;
@@ -20,11 +25,12 @@ export default function Pads(props) {
   };
   return (
     <div className="all-pads">
-      <h1>Pads:</h1>
-      {pads.map((pad) => (
+      <h1>{props.search}</h1>
+      {queriedPads.map((pad) => (
         <div className="pad-container" key={pad.id}>
           <h2>{pad.name}</h2>
           <img alt="house" src={pad.photos[0]?.url} />
+          <p>Location: {pad.location}</p>
           <p>Beds: {pad.rooms}</p>
           <p>Private Kitchen: {truthyKitchen(pad)}</p>
           <p>Private Bathroom: {truthyBathroom(pad)}</p>
