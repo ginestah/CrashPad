@@ -27,10 +27,13 @@ a:visted {
 }
 .social {
   text-decoration: none;
-  color: salmon;
+  color: black;
+  display: inline-block;
+  align-self: center;
+  left: 50%;
 }
 .social:visited {
-  color: salmon;
+  color: black;
 }
 .social:hover {
   transform: scale(1.2);

@@ -39,7 +39,7 @@ Pad.all.find_each do |pad|
 end
 Pad.all.find_each do |pad|
   2.times {Review.create!(
-    content: Faker::Hipster.paragraph,
+    content: Faker::Lorem.paragraph,
     pad: pad,
     user:User.all.sample
   )}
