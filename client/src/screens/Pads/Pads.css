@@ -1,4 +1,5 @@
 .all-pads {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -6,9 +7,12 @@
 .pad-container {
   border: 1px solid grey;
   margin: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 .pad-container img {
   max-width: 95vw;
+  max-height: 50vh;
 }
 .link-to-reviews,
 .link-to-reviews:visited {
@@ -40,4 +44,10 @@
 }
 .submit-review {
   width: 200px;
+}
+@media (min-width: 470px) {
+  .pad-container img {
+    max-width: 95vw;
+    max-height: 45vh;
+  }
 }

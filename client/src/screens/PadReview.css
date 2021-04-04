@@ -36,3 +36,12 @@
 .add-review:hover {
   box-shadow: rgba(233, 233, 233, 0);
 }
+@media (min-width: 470px) {
+  .review-photos {
+    max-width: 60vw;
+    order: -1;
+  }
+  .review-container {
+    margin-top: 0 auto;
+  }
+}

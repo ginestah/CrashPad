@@ -33,23 +33,28 @@ export default function PadReview(props) {
       />
       <div className="review-container-two">
         <p>Reviews:</p>
+
+        {singlePad?.reviews.length > 0 ? (
+          singlePad?.reviews.map((review) => (
+            <div className="review">
+              <p className="review-content">{review.content}</p>
+              <p>By: {review.user.username}</p>
+              {props.currentUser && props.currentUser.id === review.user_id ? (
+                <button
+                  className="reviews-button"
+                  onClick={() => handleDelete(review.id)}
+                >
+                  Remove
+                </button>
+              ) : null}
+            </div>
+          ))
+        ) : (
+          <p>No Reviews yet</p>
+        )}
         <Link to={`/pads/reviews/add/${singlePad?.id}`}>
           <button className="reviews-button">Add Review</button>
         </Link>
-        {singlePad?.reviews.map((review) => (
-          <div className="review">
-            <p className="review-content">{review.content}</p>
-            <p>By: {review.user.username}</p>
-            {props.currentUser && props.currentUser.id === review.user_id ? (
-              <button
-                className="reviews-button"
-                onClick={() => handleDelete(review.id)}
-              >
-                Remove
-              </button>
-            ) : null}
-          </div>
-        ))}
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ export default function Footer(props) {
           )
         ) : null}
         <a
-          className="login-link"
+          className="social"
           href="https://www.linkedin.com/in/huckleberry-ginesta/"
         >
           &copy; Huckleberry Ginesta 2021

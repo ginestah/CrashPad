@@ -6,7 +6,7 @@ import "./Pads.css";
 export default function Pads(props) {
   const { pads, handleDelete, currentUser } = props;
   const queriedPads = pads.filter((pad) =>
-    pad.location.toLowerCase().includes(props.search)
+    pad.location.toLowerCase().includes(props.search.toLowerCase())
   );
 
   const truthyKitchen = (pad) => {
@@ -25,7 +25,7 @@ export default function Pads(props) {
   };
   return (
     <div className="all-pads">
-      <h1>Pads:</h1>
+      <h1>{props.search}</h1>
       {queriedPads.map((pad) => (
         <div className="pad-container" key={pad.id}>
           <h2>{pad.name}</h2>

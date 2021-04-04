@@ -6,7 +6,7 @@ export default function Header(props) {
   const biggerThan600 = useMediaPredicate("(min-width: 600px)");
 
   function handleSearch(e) {
-    props.setSearch(e.target.value.toLowerCase());
+    props.setSearch(e.target.value);
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Header(props) {
         </Link>
         {biggerThan600 ? (
           props.currentUser ? (
-            <>
+            <div className="logout-container">
               <Link
                 className="login-link logo logout"
                 onClick={props.handleLogout}
@@ -37,7 +37,7 @@ export default function Header(props) {
               <Link className="login-link logo host" to="/new">
                 Host
               </Link>
-            </>
+            </div>
           ) : (
             <Link className="login-link logo logout" to="/login">
               Login

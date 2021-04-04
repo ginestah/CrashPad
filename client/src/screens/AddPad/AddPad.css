@@ -21,6 +21,7 @@ form {
   border-radius: 5px;
   background-color: #f0ead6;
   max-width: 500px;
+  margin-top: 20px;
 }
 .form-container {
   display: flex;
@@ -48,4 +49,9 @@ form {
 }
 .sign-in-form {
   margin: 50px;
+}
+@media (min-width: 470px) {
+  form {
+    margin-top: 70px;
+  }
 }

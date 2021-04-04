@@ -25,3 +25,13 @@ a:visted {
   display: block;
   right: 5px;
 }
+.social {
+  text-decoration: none;
+  color: salmon;
+}
+.social:visited {
+  color: salmon;
+}
+.social:hover {
+  transform: scale(1.2);
+}
