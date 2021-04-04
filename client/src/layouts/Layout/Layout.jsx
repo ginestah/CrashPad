@@ -5,7 +5,7 @@ import "./Layout.css";
 export default function Layout(props) {
   return (
     <div className="layout">
-      <Header currentUser={props.currentUser} />
+      <Header currentUser={props.currentUser} setSearch={props.setSearch} />
       <div className="layout-children">{props.children}</div>
       <Footer
         currentUser={props.currentUser}

@@ -14,7 +14,9 @@ import {
 } from "./services/auth";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [search, setSearch] = useState("");
   const history = useHistory();
+
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
@@ -41,7 +43,11 @@ function App() {
   };
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Layout
+        currentUser={currentUser}
+        setSearch={setSearch}
+        handleLogout={handleLogout}
+      >
         <Switch>
           <Route path="/login">
             <Login handleLogin={handleLogin} />
@@ -50,7 +56,7 @@ function App() {
             <Register handleRegister={handleRegister} />
           </Route>
           <Route path="/">
-            <MainContainer currentUser={currentUser} />
+            <MainContainer search={search} currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
