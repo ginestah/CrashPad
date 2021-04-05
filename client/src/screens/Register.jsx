@@ -26,6 +26,16 @@ export default function Register(props) {
       [name]: value,
     }));
   };
+  const CHECKS = () => {
+    if (password_confirm !== password || password.length < 8) {
+      if (password_confirm !== password) {
+        return <p>Passwords must match</p>;
+      } else if (password.split("").length <= 8) {
+        return <p>Password must be 8 or more characters.</p>;
+      }
+    }
+    return <button className="submit-pad">Submit</button>;
+  };
 
   return (
     <form
@@ -87,7 +97,7 @@ export default function Register(props) {
         />
       </label>
       <br />
-      <button className="submit-pad">Submit</button>
+      {CHECKS()}
     </form>
   );
 }
