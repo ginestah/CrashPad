@@ -27,7 +27,6 @@
   }
   .image-container {
     height: 60vh;
-    width: 100%;
   }
 }
 @media (min-width: 1060px) {
