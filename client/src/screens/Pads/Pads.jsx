@@ -28,7 +28,7 @@ export default function Pads(props) {
   return (
     <div className="all-pads">
       <h1>{props.search}</h1>
-      {queriedPads.map((pad) => (
+      {queriedPads.reverse().map((pad) => (
         <div className="pad-container" key={pad.id}>
           <h2>{pad.name}</h2>
           <img alt="house" src={pad.photos[0]?.url} />
