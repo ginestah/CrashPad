@@ -27,15 +27,21 @@ function App() {
   }, []);
 
   const handleLogin = async (formData) => {
-    const userData = await loginUser(formData);
-    setCurrentUser(userData);
-    history.push("/");
+    try {
+      const userData = await loginUser(formData);
+      setCurrentUser(userData);
+      setError(null);
+      history.push("/");
+    } catch (e) {
+      setError(e);
+    }
   };
 
   const handleRegister = async (formData) => {
     try {
       const userData = await registerUser(formData);
       setCurrentUser(userData);
+      setError(null);
       history.push("/");
     } catch (e) {
       setError(e.response.data);
@@ -55,7 +61,7 @@ function App() {
       >
         <Switch>
           <Route path="/login">
-            <Login handleLogin={handleLogin} />
+            <Login error={error} handleLogin={handleLogin} />
           </Route>
           <Route path="/register">
             <Register error={error} handleRegister={handleRegister} />
