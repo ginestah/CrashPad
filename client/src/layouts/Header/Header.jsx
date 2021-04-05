@@ -24,26 +24,28 @@ export default function Header(props) {
         <Link to="/pads">
           <button className="edit-button">SearchPads</button>
         </Link>
-        {biggerThan600 ? (
-          props.currentUser ? (
-            <div className="logout-container">
-              <Link
-                className="login-link logo logout"
-                onClick={props.handleLogout}
-                to="/"
-              >
-                Logout
+        <div className="logout-container">
+          {biggerThan600 ? (
+            props.currentUser ? (
+              <>
+                <Link
+                  className="login-link logo logout"
+                  onClick={props.handleLogout}
+                  to="/"
+                >
+                  Logout
+                </Link>
+                <Link className="login-link logo host" to="/new">
+                  Host
+                </Link>
+              </>
+            ) : (
+              <Link className="login-link logo logout" to="/login">
+                Login
               </Link>
-              <Link className="login-link logo host" to="/new">
-                Host
-              </Link>
-            </div>
-          ) : (
-            <Link className="login-link logo logout" to="/login">
-              Login
-            </Link>
-          )
-        ) : null}
+            )
+          ) : null}
+        </div>
       </header>
       <br />
     </>
