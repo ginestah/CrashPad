@@ -36,7 +36,6 @@ function App() {
     try {
       const userData = await registerUser(formData);
       setCurrentUser(userData);
-      setError(null);
       history.push("/");
     } catch (e) {
       setError(e.response.data);
