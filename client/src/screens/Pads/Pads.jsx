@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useMediaPredicate } from "react-media-hook";
 
 import "./Pads.css";
 
 export default function Pads(props) {
+  const biggerThan600 = useMediaPredicate("(min-width: 600px)");
+
   const { pads, handleDelete, currentUser } = props;
   const queriedPads = pads.filter((pad) =>
     pad.location.toLowerCase().includes(props.search.toLowerCase())
@@ -23,6 +25,7 @@ export default function Pads(props) {
       return <>No</>;
     }
   };
+  console.log(queriedPads);
   return (
     <div className="all-pads">
       <h1>{props.search}</h1>
@@ -35,6 +38,11 @@ export default function Pads(props) {
           <p>Private Kitchen: {truthyKitchen(pad)}</p>
           <p>Private Bathroom: {truthyBathroom(pad)}</p>
           <p>Available: {pad.available_dates}</p>
+          {biggerThan600 && (
+            <p className="recent-review">
+              Most Recent Review: {pad.reviews[pad.reviews.length - 1]?.content}
+            </p>
+          )}
           <Link to={`/pads/${pad.id}`}>
             <button className="reviews-button">Reviews</button>
           </Link>

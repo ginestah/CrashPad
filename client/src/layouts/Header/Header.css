@@ -45,12 +45,16 @@ header a:active {
 @media (min-width: 470px) {
   .logout,
   .host {
-    align-self: flex-end;
+    /* align-self: flex-end; */
     font-size: 18px;
+    top: 10px;
   }
   .logout-container {
+    position: inherit;
     display: flex;
     align-self: flex-end;
+    justify-self: right;
     flex-direction: column-reverse;
+    top: 5px;
   }
 }

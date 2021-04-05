@@ -10,7 +10,7 @@
 .image-container {
   background-color: black;
   background-size: cover;
-  width: 100%;
+  width: 110%;
   margin-top: 10px;
   height: 35vh;
   color: white;
@@ -27,5 +27,14 @@
   .image-container {
     height: 60vh;
     width: 100%;
+  }
+}
+@media (min-width: 1060px) {
+  .image-container {
+    height: 70vh;
+  }
+  .home-image {
+    max-height: 50vh;
+    width: auto;
   }
 }
