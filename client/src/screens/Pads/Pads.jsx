@@ -25,7 +25,6 @@ export default function Pads(props) {
       return <>No</>;
     }
   };
-  console.log(queriedPads);
   return (
     <div className="all-pads">
       <h1>{props.search}</h1>
