@@ -16,6 +16,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [search, setSearch] = useState("");
   const history = useHistory();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -32,9 +33,14 @@ function App() {
   };
 
   const handleRegister = async (formData) => {
-    const userData = await registerUser(formData);
-    setCurrentUser(userData);
-    history.push("/");
+    try {
+      const userData = await registerUser(formData);
+      setCurrentUser(userData);
+      setError(null);
+      history.push("/");
+    } catch (e) {
+      setError(e.response.data);
+    }
   };
   const handleLogout = () => {
     setCurrentUser(null);
@@ -53,7 +59,7 @@ function App() {
             <Login handleLogin={handleLogin} />
           </Route>
           <Route path="/register">
-            <Register handleRegister={handleRegister} />
+            <Register error={error} handleRegister={handleRegister} />
           </Route>
           <Route path="/">
             <MainContainer search={search} currentUser={currentUser} />

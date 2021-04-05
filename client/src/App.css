@@ -5,3 +5,6 @@
 form {
   align-self: center;
 }
+.error-message {
+  color: red;
+}

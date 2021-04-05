@@ -2,13 +2,10 @@ import api from "./api-config";
 
 export const loginUser = async (loginData) => {
   const resp = await api.post("/auth/login", { authentication: loginData });
-  try {
-    localStorage.setItem("authToken", resp.data.token);
-    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-    return resp.data.user;
-  } catch (error) {
-    return console.log(error);
-  }
+
+  localStorage.setItem("authToken", resp.data.token);
+  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+  return resp.data.user;
 };
 
 export const registerUser = async (registerData) => {
@@ -16,9 +13,8 @@ export const registerUser = async (registerData) => {
   try {
     localStorage.setItem("authToken", resp.data.token);
     api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-    return resp.data.user;
-  } catch (error) {
-    return console.log(error);
+  } catch (e) {
+    throw e;
   }
 };
 

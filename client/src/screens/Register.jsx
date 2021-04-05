@@ -37,6 +37,18 @@ export default function Register(props) {
     return <button className="submit-pad">Submit</button>;
   };
 
+  const renderError = () => {
+    if (props.error !== null) {
+      if (props.error.username) {
+        return (
+          <p className="error-message"> Username {props.error.username[0]}</p>
+        );
+      } else if (props.error.email) {
+        return <p className="error-message">Email {props.error.email[0]}</p>;
+      }
+    }
+  };
+
   return (
     <form
       onSubmit={(e) => {
@@ -98,6 +110,7 @@ export default function Register(props) {
       </label>
       <br />
       {CHECKS()}
+      {renderError()}
     </form>
   );
 }

@@ -40,6 +40,12 @@ header a:active {
   font-size: 20px;
   letter-spacing: 1.2px;
 }
+.clear-search {
+  position: absolute;
+  z-index: 1;
+  top: 55px;
+  right: 15%;
+}
 
 @media (min-width: 470px) {
   .logout,
