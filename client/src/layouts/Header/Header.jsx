@@ -22,7 +22,6 @@ export default function Header(props) {
             type="search"
             placeholder="Where are you heading?"
           ></input>
-          <p className="clear-search">X</p>
         </div>
         <Link to="/pads">
           <button className="edit-button">SearchPads</button>

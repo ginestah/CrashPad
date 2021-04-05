@@ -6,7 +6,7 @@ import Pads from "../screens/Pads/Pads";
 import AddPad from "../screens/AddPad/AddPad";
 import EditPad from "../screens/EditPad";
 import Home from "../screens/Home/Home";
-import PadReview from "../screens/PadReview";
+import PadReview from "../screens/PadReview/PadReview";
 import AddReview from "../screens/AddReview";
 
 function MainContainer(props) {
