@@ -33,8 +33,12 @@ function App() {
 
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
-    setCurrentUser(userData);
-    history.push("/");
+    try {
+      setCurrentUser(userData);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleLogout = () => {
     setCurrentUser(null);

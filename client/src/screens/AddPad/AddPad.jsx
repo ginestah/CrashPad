@@ -20,8 +20,8 @@ export default function AddPad(props) {
     name,
     rooms,
     available_dates,
-    private_kitchen,
-    private_bathroom,
+    // private_kitchen,
+    // private_bathroom,
     location,
     photos_attributes,
   } = formData;
