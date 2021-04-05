@@ -32,6 +32,7 @@ header a:active {
 }
 
 .search {
+  margin-bottom: 2px;
   align-self: center;
   border-radius: 15px;
   height: 40px;
