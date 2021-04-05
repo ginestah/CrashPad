@@ -45,7 +45,7 @@ export default function PadReview(props) {
     return null;
   });
   console.log(pics[0]);
-
+  //got a the image/thumbnail code from classmates code @ https://github.com/arbayer4/car-app
   return (
     <div className="review-container">
       <h1 className="pad-title">{singlePad?.name}</h1>
