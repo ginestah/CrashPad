@@ -26,6 +26,28 @@ export default function Register(props) {
       [name]: value,
     }));
   };
+  const CHECKS = () => {
+    if (password_confirm !== password || password.length < 8) {
+      if (password_confirm !== password) {
+        return <p>Passwords must match</p>;
+      } else if (password.split("").length <= 8) {
+        return <p>Password must be 8 or more characters.</p>;
+      }
+    }
+    return <button className="submit-pad">Submit</button>;
+  };
+
+  const renderError = () => {
+    if (props.error !== null) {
+      if (props.error.username) {
+        return (
+          <p className="error-message"> Username {props.error.username[0]}</p>
+        );
+      } else if (props.error.email) {
+        return <p className="error-message">Email {props.error.email[0]}</p>;
+      }
+    }
+  };
 
   return (
     <form
@@ -87,7 +109,8 @@ export default function Register(props) {
         />
       </label>
       <br />
-      <button className="submit-pad">Submit</button>
+      {CHECKS()}
+      {renderError()}
     </form>
   );
 }

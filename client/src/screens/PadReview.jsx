@@ -36,7 +36,7 @@ export default function PadReview(props) {
 
         {singlePad?.reviews.length > 0 ? (
           singlePad?.reviews.map((review) => (
-            <div className="review">
+            <div key={review.id} className="review">
               <p className="review-content">{review.content}</p>
               <p>By: {review.user.username}</p>
               {props.currentUser && props.currentUser.id === review.user_id ? (
