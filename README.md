@@ -37,7 +37,6 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 | :--------------: | :----------------------------------------- |
 |      React       | _The core structure of the front end._ |
 |   React Router   | _Allow routing to different screens/pages._ |
-| Styled Components | _A good way to style your component within the JSX file._ |
 |     Ruby on Rails      | _Backend for RESTful API._ |
 
 <br>
@@ -83,22 +82,20 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Setting Up Basic Layout | H | 2 Hr |  Hr |
-| Creating API | H | 3 Hr | Hr |  Hr |
-| Testing API | H | 2 Hr |  Hr |
-| Deploy API | H | 3 Hr |  Hr | 
-| React Route/Links | H | 3 Hr |  Hr | 
-| React Post/Feed Component | H | 3 Hr |  Hr | 
-| React/JS post/put/delete calls | H | 3 Hr |  Hr | 
-| React Header/Footer | M | 3 Hr |  Hr | 
-| Pads | M | 3 Hr |  Hr | 
-| CSS Styling MOBILE | H | 3 Hr |  Hr | 
-| CSS Styling DESKTOP/Tablet | H | 3 Hr |  Hr | 
-| POST MVP - Likes | L | 3 Hr | Hr | 
-| CSS breakpoints | M | 3 Hr |  Hr | 
-| Testing React Components | H | 3 Hr |  Hr | 
-| Hosting MVP | M | 3 Hr |  Hr | 
-| Total Time | | 55 Hrs | Hrs | 
+| Setting Up Basic Layout | H | 2 Hr |  2Hr |2 hr|
+| Creating API | H | 3 Hr |3 Hr | 3 Hr |
+| Testing API | H | 2 Hr |  1Hr |1hr |
+| Deploy API | H | 3 Hr |  1Hr | 1hr| 
+| React Route/Links | H | 3 Hr |  3Hr | 3hr| 
+| React Pad/Review Component | H | 3 Hr |  3Hr | 3hr|
+| React/JS post/put/delete calls | H | 3 Hr |  2Hr | 2hr|
+| React Header/Footer | M | 3 Hr |  1Hr | 1hr|
+| CSS Styling MOBILE | H | 3 Hr | 4 Hr | 4hr|
+| CSS Styling DESKTOP/Tablet | H | 3 Hr |  5Hr | 5hr|  
+| CSS breakpoints | M | 3 Hr |  3Hr |3hr| 
+| Testing React Components | H | 3 Hr |  3Hr | 3h| 
+| Hosting MVP | M | 3 Hr |  1Hr |1hr| 
+| Total Time | |  Hrs | Hrs | 
 
 <br>
 
