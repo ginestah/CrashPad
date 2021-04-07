@@ -121,7 +121,11 @@ Add a virtual currency exchange and legitimize booking on the site. <br>
 
 one of the things I was most proud of on this project was adding multiple photos in the edit screen, and allowing users to remove photos from the database or add new ones through nested attributes. This was a tricky problem to remove them from both state and the DB so that the user could see which photos were being removed/added in real time.
 ```javascript
-//this delete checks to see if the image has an id, if it does that means it was added previously and is in the database, in order to remove it we must make an api //call to the photos table for that specific photo. If it doesn't have an id that means it has just been added in state, therefore we can just splice it from the //formData state array.
+//this delete checks to see if the image has an id, if it does that means it was added previously and is in the database, in order to remove it we must make an api 
+
+//call to the photos table for that specific photo. If it doesn't have an id that means it has just been added in state, therefore we can just splice it from the 
+
+//formData state array.
  const deleteImage = (e) => {
     if (formData.photos_attributes[e.target.value].id) {
       handlePhotoDelete(formData.photos_attributes[e.target.value].id);
@@ -133,7 +137,9 @@ one of the things I was most proud of on this project was adding multiple photos
     }
   };
   
-  //In order to add photos to the photo table via nested_attributes on rails, the photos had to be packaged seperately and then added to the form data as an array //of objects. This function sets the formData with the previous state, and adds to the photos_attributes array a nested object with the key url, and a string value //which is the image just added.
+  //In order to add photos to the photo table via nested_attributes on rails, the photos had to be packaged seperately and then added to the form data as an array
+ //of objects. This function sets the formData with the previous state, and adds to the photos_attributes array a nested object with the key url, and a string
+ //value which is the image just added.
   
    function handleImage(e) {
     setFormData((prevState) => ({
