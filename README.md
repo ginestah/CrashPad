@@ -93,9 +93,9 @@ src
 | CSS Styling MOBILE | H | 3 Hr | 4 Hr | 4hr|
 | CSS Styling DESKTOP/Tablet | H | 3 Hr |  5Hr | 5hr|  
 | CSS breakpoints | M | 3 Hr |  3Hr |3hr| 
-| Testing React Components | H | 3 Hr |  3Hr | 3h| 
+| Testing React Components | H | 3 Hr |  4Hr | 4h| 
 | Hosting MVP | M | 3 Hr |  1Hr |1hr| 
-| Total Time | |  Hrs | Hrs | 
+| Total Time | |  Hrs | 31Hrs | 33hr|
 
 <br>
 
