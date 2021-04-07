@@ -37,7 +37,6 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 | :--------------: | :----------------------------------------- |
 |      React       | _The core structure of the front end._ |
 |   React Router   | _Allow routing to different screens/pages._ |
-| Styled Components | _A good way to style your component within the JSX file._ |
 |     Ruby on Rails      | _Backend for RESTful API._ |
 
 <br>
@@ -49,7 +48,7 @@ _**CrashPad** is a community house sharing experience for climbers, and outdoors
 #### Component Tree
 
 
-![Component Tree](Assets/Heirarchy.png)
+![Component Tree](Assets/ComponentHeirarchy.png)
 
 #### Component Architecture
 
@@ -83,22 +82,20 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Setting Up Basic Layout | H | 2 Hr |  Hr |
-| Creating API | H | 3 Hr | Hr |  Hr |
-| Testing API | H | 2 Hr |  Hr |
-| Deploy API | H | 3 Hr |  Hr | 
-| React Route/Links | H | 3 Hr |  Hr | 
-| React Post/Feed Component | H | 3 Hr |  Hr | 
-| React/JS post/put/delete calls | H | 3 Hr |  Hr | 
-| React Header/Footer | M | 3 Hr |  Hr | 
-| Pads | M | 3 Hr |  Hr | 
-| CSS Styling MOBILE | H | 3 Hr |  Hr | 
-| CSS Styling DESKTOP/Tablet | H | 3 Hr |  Hr | 
-| POST MVP - Likes | L | 3 Hr | Hr | 
-| CSS breakpoints | M | 3 Hr |  Hr | 
-| Testing React Components | H | 3 Hr |  Hr | 
-| Hosting MVP | M | 3 Hr |  Hr | 
-| Total Time | | 55 Hrs | Hrs | 
+| Setting Up Basic Layout | H | 2 Hr |  2Hr |2 hr|
+| Creating API | H | 3 Hr |3 Hr | 3 Hr |
+| Testing API | H | 2 Hr |  1Hr |1hr |
+| Deploy API | H | 3 Hr |  1Hr | 1hr| 
+| React Route/Links | H | 3 Hr |  3Hr | 3hr| 
+| React Pad/Review Component | H | 3 Hr |  3Hr | 3hr|
+| React/JS post/put/delete calls | H | 3 Hr |  2Hr | 2hr|
+| React Header/Footer | M | 3 Hr |  1Hr | 1hr|
+| CSS Styling MOBILE | H | 3 Hr | 4 Hr | 4hr|
+| CSS Styling DESKTOP/Tablet | H | 3 Hr |  5Hr | 5hr|  
+| CSS breakpoints | M | 3 Hr |  3Hr |3hr| 
+| Testing React Components | H | 3 Hr |  4Hr | 4h| 
+| Hosting MVP | M | 3 Hr |  1Hr |1hr| 
+| Total Time | |  Hrs | 31Hrs | 33hr|
 
 <br>
 
@@ -121,6 +118,37 @@ Add a virtual currency exchange and legitimize booking on the site. <br>
 ***
 
 ## Code Showcase
+
+one of the things I was most proud of on this project was adding multiple photos in the edit screen, and allowing users to remove photos from the database or add new ones through nested attributes. This was a tricky problem to remove them from both state and the DB so that the user could see which photos were being removed/added in real time.
+```javascript
+//this delete checks to see if the image has an id, if it does that means it was added previously and is in the database, in order to remove it we must make an api 
+
+//call to the photos table for that specific photo. If it doesn't have an id that means it has just been added in state, therefore we can just splice it from the 
+
+//formData state array.
+ const deleteImage = (e) => {
+    if (formData.photos_attributes[e.target.value].id) {
+      handlePhotoDelete(formData.photos_attributes[e.target.value].id);
+      formData.photos_attributes.splice(e.target.value, 1);
+      setFormData({ ...formData });
+    } else {
+      formData.photos_attributes.splice(e.target.value, 1);
+      setFormData({ ...formData });
+    }
+  };
+  
+  //In order to add photos to the photo table via nested_attributes on rails, the photos had to be packaged seperately and then added to the form data as an array
+ //of objects. This function sets the formData with the previous state, and adds to the photos_attributes array a nested object with the key url, and a string
+ //value which is the image just added.
+  
+   function handleImage(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      photos_attributes: [...photos_attributes, { url: imageAdd }],
+    }));
+    setImageAdd("");
+  }
+```
 
 
 ## Code Issues & Resolutions

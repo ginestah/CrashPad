@@ -10,6 +10,7 @@
 .image-container {
   background-color: black;
   background-size: cover;
+  align-self: center;
   width: 110%;
   margin-top: 10px;
   height: 35vh;
@@ -26,7 +27,6 @@
   }
   .image-container {
     height: 60vh;
-    width: 100%;
   }
 }
 @media (min-width: 1060px) {

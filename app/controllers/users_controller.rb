@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         }, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
+      # render json: @user.errors.objects.first.full_message
     end
   end
 

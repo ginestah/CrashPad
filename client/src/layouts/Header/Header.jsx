@@ -15,12 +15,14 @@ export default function Header(props) {
         <Link to="/">
           <h1 className="logo">CrashPad</h1>
         </Link>
-        <input
-          onChange={(e) => handleSearch(e)}
-          className="search"
-          type="search"
-          placeholder="Where are you heading?"
-        ></input>
+        <div>
+          <input
+            onChange={(e) => handleSearch(e)}
+            className="search"
+            type="search"
+            placeholder="Where are you heading?"
+          ></input>
+        </div>
         <Link to="/pads">
           <button className="edit-button">SearchPads</button>
         </Link>

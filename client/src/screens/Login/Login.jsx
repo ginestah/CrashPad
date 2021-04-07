@@ -17,6 +17,11 @@ export default function Login(props) {
       [name]: value,
     }));
   };
+  const renderError = () => {
+    if (props.error !== null) {
+      return <p className="error-message">Username or password is incorrect</p>;
+    }
+  };
 
   return (
     <div className="form-container sign-in-form">
@@ -48,6 +53,7 @@ export default function Login(props) {
         </label>
         <br />
         <br />
+        {renderError()}
         <button type="submit" className="submit-pad">
           Submit
         </button>
