@@ -4,7 +4,7 @@ import { destroyPad, getAllPads, postPad, putPad } from "../services/pads";
 
 import Pads from "../screens/Pads/Pads";
 import AddPad from "../screens/AddPad/AddPad";
-import EditPad from "../screens/EditPad";
+import EditPad from "../screens/EditPad/EditPad";
 import Home from "../screens/Home/Home";
 import PadReview from "../screens/PadReview/PadReview";
 import AddReview from "../screens/AddReview";
