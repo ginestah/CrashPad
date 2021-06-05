@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { destroyPad, getAllPads, postPad, putPad } from "../services/pads";
 
@@ -14,6 +15,8 @@ function MainContainer(props) {
   const [toggle, setToggle] = useState(false);
   const history = useHistory();
   const { currentUser } = props;
+  // const hello = useContext(TestContext);
+  const TestContext = React.createContext("Hello");
 
   //get all of the pad data, which includes the user and photos and reviews
   useEffect(() => {
@@ -53,7 +56,9 @@ function MainContainer(props) {
   return (
     <Switch>
       <Route path="/pads/reviews/add/:id">
-        <AddReview currentUser={currentUser} />
+        <TestContext.Provider value="Hello">
+          <AddReview currentUser={currentUser} />
+        </TestContext.Provider>
       </Route>
       <Route path="/pads/:id/edit">
         <EditPad pads={pads} handleUpdate={handleUpdate} />

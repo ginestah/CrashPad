@@ -1,5 +1,5 @@
 import { useParams, useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { createReview } from "../services/reviews";
 
 export default function AddReview(props) {
@@ -22,6 +22,7 @@ export default function AddReview(props) {
     await createReview(Number(id), formData);
     history.push(`/pads/${id}`);
   };
+  const test = useContext(TestContext);
   return (
     <div>
       <h2>Add Review:</h2>

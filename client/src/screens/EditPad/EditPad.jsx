@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { destroyPhoto } from "../services/pads";
+import { destroyPhoto } from "../../services/pads";
 
-import "./AddPad/AddPad.css";
+import "../AddPad/AddPad.css";
 
 export default function EditPad(props) {
   const { pads, handleUpdate } = props;

@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -52,6 +53,7 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
   };
+
   return (
     <div className="App">
       <Layout
